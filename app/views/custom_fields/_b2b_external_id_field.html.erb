@@ -1,0 +1,7 @@
+<% if ::EasyRakeTaskB2bSynchronizing::B2B_FIELD_CF_TYPES.include?(custom_field.type) %>
+  <div class="box tabular">
+    <p>
+      <%= f.text_field :b2b_external_id,  label: :label_b2b_external_id %>
+    </p>
+  </div>
+<% end %>

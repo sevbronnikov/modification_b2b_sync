@@ -1,0 +1,5 @@
+<% if ::EasyRakeTaskB2bSynchronizing.b2b_field_enumeration_types.include?(enumeration.type) %>
+  <p>
+    <%= f.text_field :b2b_external_id,  label: :label_b2b_external_id %>
+  </p>
+<% end %>

@@ -1,0 +1,44 @@
+<%= title l(:'b2b_sync_settings.title') %>
+
+<div class="box tabular">
+  <% %w[url api_key].each do |setting| %>
+    <p>
+      <%= form.label setting, l(:"b2b_sync_settings.#{setting}.field") %>
+      <%= form.text_field setting %>
+      <em class="help"><%= l(:"b2b_sync_settings.#{setting}.help") %></em>
+    </p>
+  <% end %>
+  <p>
+    <% temp_user_id = ::EasySetting.value("modification_b2b_sync_default_user_id") %>
+    <label><%= l(:"b2b_sync_settings.default_user_id.field") %></label>
+    <%= easy_autocomplete_tag('easy_setting[default_user_id]',
+                              { name: User.find_by(id: temp_user_id)&.name, id: temp_user_id },
+                              easy_autocomplete_path('users'),
+                              root_element: 'users',
+                              html_options: { id: 'easy_setting_default_user_id' }) %>
+    <em class="help"><%= l(:"b2b_sync_settings.default_user_id.help") %></em>
+  </p>
+  <p>
+    <% temp_project_id = ::EasySetting.value("modification_b2b_sync_default_project_id") %>
+    <label><%= l(:"b2b_sync_settings.default_project_id.field") %></label>
+    <%= easy_autocomplete_tag('easy_setting[default_project_id]',
+                              { name: Project.find_by(id: temp_project_id)&.name, id: temp_project_id },
+                              easy_autocomplete_path('visible_projects'),
+                              root_element: 'projects',
+                              html_options: { id: 'easy_setting_default_project_id' }) %>
+    <em class="help"><%= l(:"b2b_sync_settings.default_project_id.help") %></em>
+  </p>
+  <p>
+    <% temp_campaign_id = ::EasySetting.value("modification_b2b_sync_default_campaign_id") %>
+    <label><%= l(:"b2b_sync_settings.default_campaign_id.field") %></label>
+    <%= easy_autocomplete_tag('easy_setting[default_campaign_id]',
+                              { name: EasyCampaign.find_by(id: temp_campaign_id)&.name, id: temp_campaign_id },
+                              easy_autocomplete_path('easy_campaigns_visible'),
+                              root_element: 'entities',
+                              html_options: { id: 'easy_setting_default_campaign_id' }) %>
+    <em class="help"><%= l(:"b2b_sync_settings.default_campaign_id.help") %></em>
+  </p>
+  <p>
+    <%= link_to(l(:label_b2b_downloads_logs), downloads_b2b_log_path, class: 'button', title: l(:label_b2b_downloads_logs)) %>
+  </p>
+</div>

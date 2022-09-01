@@ -1,0 +1,22 @@
+<fieldset id="data_types" class="box"><legend><%=l(:'easy_rake_tasks.easy_rake_task_b2b_synchronizing.settings_checkbox')%><span><%= check_all_links('data_types') %></span></legend>
+
+  <div class="splitcontent checkbox-grid">
+    <% synchronization_grid(get_synchronizing_data).each do |k, v| %>
+      <div class="size-25">
+        <div class="checkbox-grid__group">
+          <% if k %>
+            <div class="checkbox-grid__item"><%= synchronizing_data_field(self, task, k) %></div>
+          <% end %>
+
+          <% if v.any? %>
+            <div class="checkbox-grid__group_sub">
+              <% v.each do |ch| %>
+                <div class="checkbox-grid__item"><%= synchronizing_data_field(self, task, ch) %></div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</fieldset>

@@ -1,0 +1,4 @@
+include:
+  project: 'gladsquid/gitlab_ci_templates'
+  file:
+    - 'easy/plugin.yml'

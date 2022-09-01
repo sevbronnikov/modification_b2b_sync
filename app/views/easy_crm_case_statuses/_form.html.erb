@@ -1,0 +1,42 @@
+<!--ORIGINAL begin-->
+<p>
+  <%= f.label :name, :required => true %>
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.check_box :is_easy_contact_required %>
+  <%= f.label :is_easy_contact_required %>
+</p>
+<p>
+  <%= f.check_box :is_default %>
+  <%= f.label :is_default %>
+</p>
+<p>
+  <%= f.check_box :is_closed %>
+  <%= f.label :is_closed %>
+</p>
+<p>
+  <%= f.check_box :is_won %>
+  <%= f.label :is_won %>
+</p>
+<p>
+  <%= f.check_box :is_provisioned %>
+  <%= f.label :is_provisioned %>
+</p>
+<p>
+  <%= f.check_box :is_paid %>
+  <%= f.label :is_paid %>
+</p>
+<p>
+  <%= f.check_box :show_in_search_results %>
+  <%= f.label :show_in_search_results %>
+</p>
+<p>
+  <%= f.check_box :only_for_admin %>
+  <%= f.label :only_for_admin %>
+</p>
+<!--ORIGINAL end-->
+<p>
+  <%= f.label :b2b_external_id, l(:label_b2b_external_id) %>
+  <%= f.text_field :b2b_external_id %>
+</p>

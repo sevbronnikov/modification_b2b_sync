@@ -1,0 +1,26 @@
+en:
+  easy_rake_tasks:
+    easy_rake_task_b2b_synchronizing:
+      caption: B2B synchronizing
+      settings_checkbox: Select the types of data to sync.
+  b2b_sync_settings:
+    title: B2B synchronization settings
+    url:
+      field: URL
+      help: URL of source EasyProject
+    api_key:
+      field: API key
+      help: Source EasyProject user API key
+    default_user_id:
+      field: Default User ID
+      help: User ID used by default
+    default_project_id:
+      field: Default Project ID
+      help: Project ID used by default when project with b2b external ID is not found
+    default_campaign_id:
+      field: Default Campaign ID
+      help: Campaign ID used by default
+  label_b2b_external_id: B2B external ID
+  label_b2b_logs: B2B logs
+  label_b2b_downloads_logs: Download B2B logs
+  enumeration_b2b_external_id: B2B external ID
